@@ -46,7 +46,10 @@ Tile::~Tile()
 
 void Tile::buildMesh()
 {
+	mesh.vertices.clear();
+	mesh.indices.clear();
 
+	// TODO
 }
 
 void Tile::upload()
@@ -56,5 +59,5 @@ void Tile::upload()
 
 void Tile::render(Shader& shader)
 {
-	
+
 }
