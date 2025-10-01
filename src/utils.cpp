@@ -19,7 +19,7 @@ void processInput(GLFWwindow *window, Camera& camera, float deltaTime)
         glfwSetWindowShouldClose(window, true);
 
     float rotationSpeed = 80.0f;
-    float moveSpeed = 200.0f;
+    float moveSpeed = 2.0f;
 
     if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
         camera.Yaw += rotationSpeed * deltaTime;

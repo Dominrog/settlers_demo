@@ -13,7 +13,7 @@
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-Camera camera(glm::vec3(0.0f), 10.0f, 0.0f, -17.0f);
+Camera camera(glm::vec3(0.0f), 5.0f, 0.0f, -17.0f);
 
 
 int main()
@@ -46,18 +46,30 @@ int main()
     }
 
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
+    glDisable(GL_CULL_FACE);
     glCullFace(GL_BACK);	
     glfwSwapInterval(0);
-
 
     Shader objectShader("../shaders/objectShader.vs", "../shaders/objectShader.fs");
 
     camera.UpdatePosition();
 
+    Tile tile(0.0f, 0.0f, TileType::Field);
+    tile.buildMesh();
+    tile.upload();
+
+    Tile tile2(1.732f, 0.0f, TileType::Field);
+    tile2.buildMesh();
+    tile2.upload();
+
+    Tile tile3(0.866f, 1.5f, TileType::Field);
+    tile3.buildMesh();
+    tile3.upload();
+
+
     while(!glfwWindowShouldClose(window))
     {
-    	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    	glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
     	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     	float currentFrame = static_cast<float>(glfwGetTime());
@@ -65,6 +77,7 @@ int main()
     	lastFrame = currentFrame;
 
     	processInput(window, camera, deltaTime);
+        countFPS();
 
 
     	glm::mat4 model = glm::mat4(1.0f);
@@ -80,7 +93,9 @@ int main()
     	camera.UpdatePosition();
 
 
-    	
+    	tile.render(objectShader);
+        tile2.render(objectShader);
+        tile3.render(objectShader);
 
 
     	glfwSwapBuffers(window);

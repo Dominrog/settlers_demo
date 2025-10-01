@@ -8,8 +8,8 @@ Camera::Camera(glm::vec3 target, float distance, float yaw, float pitch)
       Yaw(yaw), 
       Pitch(pitch),
       WorldUp(0.0f, 1.0f, 0.0f),
-      MinDistance(100.0f),
-      MaxDistance(600.0f),
+      MinDistance(1.0f),
+      MaxDistance(5.0f),
       MinPitch(-5.0f),
       MaxPitch(-35.0f)
 {
@@ -35,7 +35,7 @@ void Camera::UpdatePosition()
 
 void Camera::ProcessMouseScroll(float yoffset)
 {
-  Distance -= yoffset * 20.0f; // Skalierung des Zooms
+  Distance -= yoffset * 1.0f; // Skalierung des Zooms
   if(Distance < MinDistance) Distance = MinDistance;
   if(Distance > MaxDistance) Distance = MaxDistance;
 
