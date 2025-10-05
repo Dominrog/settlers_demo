@@ -9,6 +9,7 @@
 #include "camera.h"
 #include "utils.h"
 #include "tile.h"
+#include "grid.h"
 
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
@@ -58,11 +59,11 @@ int main()
     tile.buildMesh();
     tile.upload();
 
-    Tile tile2(1.732f, 0.0f, TileType::Field);
+    Tile tile2(2.0f, 0.0f, TileType::Field);
     tile2.buildMesh();
     tile2.upload();
 
-    Tile tile3(0.866f, 1.5f, TileType::Field);
+    Tile tile3(1.0f, 1.742f, TileType::Field);
     tile3.buildMesh();
     tile3.upload();
 
