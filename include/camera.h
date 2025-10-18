@@ -6,8 +6,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 struct Ray {
-    glm::vec3 origin;
-    glm::vec3 dir;
+  glm::vec3 origin;
+  glm::vec3 dir;
 };
 
 
@@ -29,14 +29,14 @@ public:
   float Pitch;
   float Distance;
 
-  bool followTarget;      // ob die Kamera einem Ziel folgt
-  glm::vec3 followPosition;       // das Ziel, dem gefolgt wird
+  bool followTarget;
+  glm::vec3 followPosition;     
   float followSpeed;  
 
   Camera(glm::vec3 target = glm::vec3(0.0f),
-         float distance = 400.0f,
-         float yaw = 0.0f,
-         float pitch = -25.0f);
+    float distance = 400.0f,
+    float yaw = 0.0f,
+    float pitch = -25.0f);
 
   glm::mat4 GetViewMatrix();
   void UpdatePosition(); 

@@ -45,4 +45,7 @@ public:
 	void buildMesh();
 	void upload();
 	void render(Shader& shader);
+
+	float GetX();
+	float GetZ();
 };

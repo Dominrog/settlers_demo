@@ -5,12 +5,15 @@ set(CMAKE_CXX_STANDARD 17)
 
 
 set(SRC_FILES
-	src/main.cpp
+	src/main.cc
 	src/glad.c
-	src/utils.cpp
-	src/camera.cpp
-	src/shader.cpp
-	src/tile.cpp
+	src/utils.cc
+	src/camera.cc
+	src/shader.cc
+	src/tile.cc
+	src/node.cc
+	src/road.cc
+	src/grid.cc
 )
 
 file(GLOB HEADER_FILES

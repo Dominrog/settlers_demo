@@ -120,3 +120,13 @@ void Tile::render(Shader& shader)
 	glDrawElements(GL_TRIANGLES, mesh.indices.size(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }
+
+float Tile::GetX()
+{
+	return x;
+}
+
+float Tile::GetZ()
+{
+	return z;
+}
