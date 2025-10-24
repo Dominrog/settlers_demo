@@ -34,4 +34,8 @@ public:
 
   void render(Shader& shader, Camera& camera);
   void destroy();
+	unsigned int radius;
+	std::vector<std::unique_ptr<Tile>> tiles;
+	std::vector<std::shared_ptr<Road>> roads;
+	std::vector<std::shared_ptr<Node>> nodes;
 };
