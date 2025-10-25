@@ -57,7 +57,7 @@ void Grid::render(Shader& shader, Camera& camera)
 
 	shader.setMat4("view", view);
 	shader.setMat4("projection", projection);
-	shader.setVec3("baseColor", 0.7f, 0.7f, 0.7f);
+	shader.setVec3("baseColor", 1.0f, 1.0f, 1.0f);
 
 	for (const auto& tile : tiles)
 	{
